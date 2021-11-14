@@ -16,4 +16,13 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 );
-console.log('HI world');
+const arr = [1, 2, 3, 4, 5];
+
+for (let i = arr.length - 1; i >= 0; i--) {
+  arr[arr.length] = arr[i];
+}
+for (let e = 0; e < arr.length / 2; e++) {
+  arr[e] = arr[arr.length / 2 + e];
+}
+arr.length = arr.length / 2;
+console.log(arr);
