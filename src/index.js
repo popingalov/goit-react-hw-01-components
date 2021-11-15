@@ -45,5 +45,5 @@ function testXor(numbers) {
     return acc ^ e;
   });
 }
-const test = [1, 2, 2, 2, 3, 3, 8, 9, 9, 1, 1, 1, 2];
+const test = [1, 2, 2, 2, 3, 3, 8, 7, 9, 9, 1, 1, 1, 2, 15];
 console.log(testXor(test));
