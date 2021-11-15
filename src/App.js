@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import Painting from './components/Painting';
+import paintings from './paintings.json';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Painting
+        title={paintings[0].title}
+        profilUrls={paintings[0].author.url}
+        price={paintings[0].price}
+      />
+      <Painting
+        url={paintings[1].url}
+        title={paintings[1].title}
+        profilUrls={paintings[1].author.url}
+        author={paintings[1].author.tag}
+        price={paintings[1].price}
+      />
     </div>
   );
 }
-
-export default App;
