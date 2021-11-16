@@ -10,3 +10,11 @@ ReactDOM.render(
   </react.StrictMode>,
   root,
 );
+function testXor(numbers) {
+  return numbers.reduce((acc, e) => {
+    console.log(acc, e);
+    return acc ^ e;
+  });
+}
+const test = [1, 1, 2, 2, 8, 7, 3, 3, 4, 4];
+console.log(testXor(test));

@@ -1,6 +1,5 @@
 import defaultUrl from './default.png';
 import PropTypes from 'prop-types';
-
 export default function Painting({
   url = defaultUrl,
   title,
@@ -22,5 +21,9 @@ export default function Painting({
 }
 
 Painting.propTypes = {
+  author: PropTypes.string,
+  price: PropTypes.number,
+  profilUrls: PropTypes.string,
+  title: PropTypes.string,
   url: PropTypes.string,
 };
