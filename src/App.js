@@ -7,7 +7,7 @@ import Transactions from './Components/TransactionHistory/TransactionHistory';
 import Statistics from './Components/statistics/Statistics';
 import Container from 'Components/Container/Container';
 import FriendList from 'Components/FriendList/FriendList';
-console.log(user);
+
 export default function App() {
   return (
     <Container>
