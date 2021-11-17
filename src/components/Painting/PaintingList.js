@@ -1,8 +1,9 @@
 import Painting from './Painting';
+import './Painting.css';
 import PropTypes from 'prop-types';
 function PaintingList({ items }) {
   return (
-    <ul>
+    <ul className="Painting">
       {items.map(item => (
         <li key={item.id}>
           <Painting

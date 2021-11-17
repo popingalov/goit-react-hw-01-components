@@ -1,7 +1,7 @@
 import defaultUrl from './default.png';
 import PropTypes from 'prop-types';
 
-export default function Painting({
+function Painting({
   url = defaultUrl,
   title,
   profilUrls,
@@ -31,3 +31,4 @@ Painting.propTypes = {
   url: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
 };
+export default Painting;
