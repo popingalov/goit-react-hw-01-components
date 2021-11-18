@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 export default function FriendListItem({ friends }) {
   return (
     <>
@@ -18,3 +19,13 @@ export default function FriendListItem({ friends }) {
     </>
   );
 }
+
+FriendListItem.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      avatar: PropTypes.string,
+      nam: PropTypes.string,
+    }),
+  ),
+};
