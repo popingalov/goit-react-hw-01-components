@@ -1,33 +1,37 @@
 import PropTypes from 'prop-types';
-export default function Statistics({ stats, title }) {
+import s from './Statistics.module.css';
+
+const Statistics = ({ title, stats }) => {
   return (
-    <section className="statistics">
-      {title ? <h2 className="title">{title}</h2> : ''}
-      <ul className="stat-list">
-        {stats.map(e => (
+    <section className={s.statistics}>
+      {title && <h2 className={s.title}>Upload stats</h2>}
+      <ul className={s.statList}>
+        {stats.map(({ id, label, percentage }) => (
           <li
-            className="item"
-            key={e.id}
             style={{
-              backgroundImage: `linear-gradient(to right ,red ${e.percentage}%,silver ${e.percentage}%) `,
+              backgroundImage: `linear-gradient(to right ,red ${percentage}%,silver ${percentage}%) `,
             }}
+            className={s.item}
+            key={id}
           >
-            <span className="label">{e.label}:</span>
-            <span className="percentage">{e.percentage}%</span>
+            <span className={s.label}>{label}</span>
+            <span className={s.percentage}>{percentage}%</span>
           </li>
         ))}
       </ul>
     </section>
   );
-}
+};
 
 Statistics.propTypes = {
+  title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.any,
-      labne: PropTypes.string,
-      percentage: PropTypes.number,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
     }),
-  ),
-  title: PropTypes.string,
+  ).isRequired,
 };
+
+export default Statistics;
